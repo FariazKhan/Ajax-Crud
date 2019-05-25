@@ -38,11 +38,11 @@ class ContactController extends Controller
     {
         $this->validate($request, [
             'name' => 'required',
-            'phoneNo' => 'required',
+            'phone' => 'required',
         ]);
         $inject = new Contact;
         $inject->name = $request->name;
-        $inject->phoneNo = $request->phoneNo;
+        $inject->phoneNo = $request->phone;
         $inject->save();
         return redirect(route('contact.index'));
     }
@@ -87,8 +87,9 @@ class ContactController extends Controller
      * @param  \App\Contact  $contact
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Contact $contact)
+    public function destroy($id)
     {
-        //
+        Contact::delete($id);
+        return redirect(route('contact.index'));
     }
 }
