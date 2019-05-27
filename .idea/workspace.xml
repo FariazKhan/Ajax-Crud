@@ -1,17 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9bbbffbd-0c61-4d34-b40f-f62c1d3c2912" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/crud.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/crud.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ContactController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ContactController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/inc/head.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/inc/head.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/home.blade.php" afterDir="false" />
-    </list>
+    <list default="true" id="9bbbffbd-0c61-4d34-b40f-f62c1d3c2912" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,11 +19,10 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/layouts/home.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="379">
-              <caret line="183" column="12" selection-start-line="183" selection-start-column="12" selection-end-line="183" selection-end-column="12" />
+            <state relative-caret-position="519">
+              <caret line="91" column="126" selection-start-line="91" selection-start-column="126" selection-end-line="91" selection-end-column="126" />
               <folding>
                 <element signature="e#2084#2102#0#HTML" expanded="true" />
-                <element signature="e#4809#5757#0#HTML" />
               </folding>
             </state>
           </provider>
@@ -265,12 +254,12 @@
       <workItem from="1558237348879" duration="164000" />
       <workItem from="1558792545048" duration="3172000" />
       <workItem from="1558879801476" duration="2917000" />
-      <workItem from="1558929691784" duration="3064000" />
+      <workItem from="1558929691784" duration="3301000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="9627000" />
+    <option name="totallyTimeSpent" value="9864000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -389,11 +378,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/layouts/home.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="379">
-          <caret line="183" column="12" selection-start-line="183" selection-start-column="12" selection-end-line="183" selection-end-column="12" />
+        <state relative-caret-position="519">
+          <caret line="91" column="126" selection-start-line="91" selection-start-column="126" selection-end-line="91" selection-end-column="126" />
           <folding>
             <element signature="e#2084#2102#0#HTML" expanded="true" />
-            <element signature="e#4809#5757#0#HTML" />
           </folding>
         </state>
       </provider>

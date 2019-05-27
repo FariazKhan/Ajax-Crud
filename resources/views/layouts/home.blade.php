@@ -89,7 +89,7 @@
                         <div class="modal-body">
                             <form>
                                 @csrf
-                                <input type="text" class="form-control" id="name" name="name" placeholder="Enter name here..." value="{{  }}">
+                                <input type="text" class="form-control" id="name" name="name" placeholder="Enter name here...">
                                 <br>
                                 <input type="text" class="form-control" id="phone" name="phoneNo" placeholder="Enter phone number here">
                                 <br>
@@ -181,7 +181,7 @@
                 });
             });
 
-            
+
         });
     </script>
 @endsection
