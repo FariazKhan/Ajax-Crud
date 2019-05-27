@@ -2,6 +2,9 @@
 
 @section('content')
 <div class="col-md-12">
+    <div class="col-md-6 offset-3">
+        <p>Your IP address is: {{ $ip }}</p>
+    </div>
     <div class="col-md-6 float-left">
         Contact Book
     </div>
@@ -65,13 +68,41 @@
                 <td>{{ $data->phoneNo }}</td>
                 <td class="pl-5 d-flex justify-content-center">
                     <div class="row">
-                        <button class="btn btn-warning mr-3"><i class="fas fa-pencil-alt"></i></button>
+                        <button class="btn btn-warning mr-3"  data-toggle="modal" data-target="#exampleModal{{$loop->index+1}}"><i class="fas fa-pencil-alt"></i></button>
                         {{ Form::open(['url' => '/contact/'.$data->id, 'method'=>'DELETE']) }}
                         {{ Form::button('', array('class' => 'btn btn-danger btn-xs bold uppercase fas fa-trash-alt', 'type' => 'submit')) }}
                         {{ Form::close() }}
                     </div>
                 </td>
             </tr>
+
+            <!-- Edit Modal -->
+            <div class="modal fade" id="exampleModal{{$loop->index+1}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Edit the contact</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <form>
+                                @csrf
+                                <input type="text" class="form-control" id="name" name="name" placeholder="Enter name here..." value="{{  }}">
+                                <br>
+                                <input type="text" class="form-control" id="phone" name="phoneNo" placeholder="Enter phone number here">
+                                <br>
+                                <button class="btn btn-warning" type="submit" id="edtsave">Save Contact</button>
+                                <br>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
         @endforeach
         </tbody>
         <tfoot>
@@ -93,16 +124,32 @@
     <script>
         $(document).ready(function () {
 
-            var table = $("#table").DataTable({
-                processing : true,
-                serverSide : true,
-                ajax       : "{{ route('contact.index') }}",
-                columns: [
-                    {data: 'id', name: 'id'},
-                    {data: 'name', name: 'name'},
-                    {data: 'phone', name: 'phoneNo'},
-                ]
-            });
+            {{--var table = $("#table").DataTable({--}}
+            {{--    processing : true,--}}
+            {{--    serverSide : true,--}}
+            {{--    ajax       : "{{ route('contact.index') }}",--}}
+            {{--    columns: [--}}
+            {{--        {data: 'id', name: 'id'},--}}
+            {{--        {data: 'name', name: 'name'},--}}
+            {{--        {data: 'phone', name: 'phoneNo'},--}}
+            {{--    ]--}}
+            {{--});--}}
+            {{--var SITEURL = '{{URL::to('')}}';--}}
+            {{--$('#laravel_datatable').DataTable({--}}
+            {{--    processing: true,--}}
+            {{--    serverSide: true,--}}
+            {{--    ajax: {--}}
+            {{--        url: SITEURL + "ajax-crud-list",--}}
+            {{--        type: 'GET',--}}
+            {{--    },--}}
+            {{--    columns: [--}}
+            {{--        // { data: 'id', name: 'name' },--}}
+            {{--        { data: 'id', name: 'id', orderable: false,searchable: false },--}}
+            {{--        { data: 'name', name: 'name' },--}}
+            {{--        { data: 'phoneNo', name: 'phoneNo' },--}}
+            {{--    ],--}}
+            {{--    order: [[0, 'desc']]--}}
+            {{--});--}}
 
             $(document).on('click', '#save', function (e) {
                 e.preventDefault();
@@ -121,9 +168,10 @@
                     dataType: 'json',
                     data:  {'name' : name, 'phone' : phone},
                 })
-                .done(function(response) {
-                    table.ajax.reload();
+                .done(function() {
+                    // table.ajax.reload();
                     $('#exampleModal').modal('hide');
+                    location.reload();
                 })
                 .fail(function() {
                     console.log("error");
@@ -132,6 +180,8 @@
                     console.log("complete");
                 });
             });
+
+            
         });
     </script>
 @endsection

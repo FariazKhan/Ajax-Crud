@@ -176,6 +176,10 @@ return [
         App\Providers\RouteServiceProvider::class,
         // Laravel form collective
         Collective\Html\HtmlServiceProvider::class,
+        // Yajra DataTable
+        Yajra\Datatables\DatatablesServiceProvider::class,
+        // Location By IP
+        Stevebauman\Location\LocationServiceProvider::class,
 
     ],
 
@@ -229,6 +233,10 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
         'Form' => Collective\Html\FormFacade::class,
         'HTML' => Collective\Html\HtmlFacade::class,
+        // Yajra DataTable
+        'Datatables' => Yajra\Datatables\Facades\Datatables::class,
+        // Location By IP
+        'Location' => 'Stevebauman\Location\Facades\Location',
     ],
 
 ];

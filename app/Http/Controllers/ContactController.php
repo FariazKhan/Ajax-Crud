@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Contact;
 use Illuminate\Http\Request;
+//use Stevebauman\Location\Location;
 
 class ContactController extends Controller
 {
@@ -12,10 +13,20 @@ class ContactController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
         $data = Contact::all();
-        return view('layouts.home')->with(compact('data'));
+        $ip = $request->ip();
+        return view('layouts.home')->with(compact('data', 'ip'));
+
+//        if(request()->ajax()) {
+//            return datatables()->of(Contact::select('*'))
+//                ->addColumn('name', 'phoneNo')
+//                ->rawColumns(['action'])
+//                ->addIndexColumn()
+//                ->make(true);
+//        }
+//        return view('layouts.home');
     }
 
     /**
